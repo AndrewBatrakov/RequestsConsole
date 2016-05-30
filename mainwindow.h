@@ -18,16 +18,22 @@ private slots:
     void readSettings();
 
     void connectProcedure();
+    void seeTable(QModelIndex);
+    void disconnectProcedure();
+    void runProcedure();
+    void aboutProcedure();
+    void exitProcedure();
 
 private:
     QWidget *centWidget;
 
     QTableView *tableView;
     QLabel *tableLabel;
-    QSqlQuery *query;
-    QSqlQueryModel *queryModel;
-    QStringList tables;
-    QStringListModel *tablesModel;
+    //QSqlQuery *query;
+    QSqlQueryModel *queryListModel;
+    QSqlQueryModel *queryTableModel;
+    //QStringList tables;
+    //QStringListModel *tablesModel;
     QListView *tablesView;
     QTextEdit *textQuery;
     QLabel *statusQuery;

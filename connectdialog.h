@@ -15,6 +15,12 @@ public:
                   const QString& dbName = "",
                   const QString& userName = "");
     ~ConnectDialog();
+    void done(int result);
+    QString connectionString() const {return conString;};
+
+private slots:
+    void connectDBButton();
+    void openSQLite();
 
 private:
     QLabel *nameMode;
@@ -30,6 +36,9 @@ private:
     QLineEdit *editUser;
     QLabel *namePassword;
     QLineEdit *editPassword;
+
+    QString conString;
+    QToolButton *openDBButton;
 };
 
 #endif // CONNECTDIALOG_H
